@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: "Verdana", sans-serif;
+            background-color: #F5EEDC;
+            color: #183B4E;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header/Section Styles */
+        header, section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #27548A;
+            margin-top: 0;
+            border-bottom: 2px solid #DDA853;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #27548A;
+            border-bottom: 2px solid #DDA853;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        /* About Me Section */
+        #about {
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #27548A;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* List Styles */
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        ul.skills-list li, 
+        ul.training-list li,
+        ul.hobbies-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+
+        ol.education-list {
+            counter-reset: item;
+            padding-left: 0;
+        }
+
+        ol.education-list li {
+            counter-increment: item;
+            margin-bottom: 15px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ol.education-list li:before {
+            content: counter(item);
+            color: #F5EEDC;
+            background-color: #27548A;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.8em;
+            line-height: 24px;
+        }
+
+        /* Back to Top Link */
+        .back-to-top {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            section, header {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Resume</h1>
+        </header>
+        <!-- About Me Section -->
+        <section id="about">
+            <img src="me.jpg" alt="Profile Picture" class="profile-image">
+            <h1>About Me</h1>
+            <p>As an employee, I can do any job as long as I'm happy with what I'm doing and I'll love my job for sure. I'll make sure that I will always smile at work and be a good example to my co-workers.</p>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section>
+            <h2>Technical IT Skills</h2>
+            <ul class="skills-list">
+                <li>Computing</li>
+                <li>Design</li>
+                <li>Social Media Worker</li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section>
+            <h2>Educational Attainment</h2>
+            <ol class="education-list">
+                <li><strong>Senior High School (2021 - 2023)</strong> - University of the East</li>
+                <li><strong>Junior High School (2017 - 2020)</strong> - University of the East</li>
+                <li><strong>Elementary (2009 - 2017)</strong> - Infant Jesus Learning Academy</li>
+            </ol>
+        </section>
+
+        <!-- Training Section -->
+        <section>
+            <h2>Skills, Training, and Seminars Attended</h2>
+            <ul class="training-list">
+                <li>Trained to help others who in need during NSTP</li>
+                <li>Programming</li>
+                <li>Cyber-bullying Webinar</li>
+            </ul>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section>
+            <h2>Hobbies & Interests Related to Job Position</h2>
+            <ul class="hobbies-list">
+                <li>Customer Services</li>
+                <li>Train to Communicate Well</li>
+                <li>Speed-typing</li>
+            </ul>
+        </section>
+        
+        <!-- Back to Top Link -->
+        <p class="back-to-top"><a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-blue: #213555;
+            --medium-blue: #4F709C;
+            --cream: #F5EFE7;
+            --gold: #DDA853;
+        }
+
+        /* Modern Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--deep-blue);
+            color: var(--cream);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        /* Modern Header */
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            background: rgba(79, 112, 156, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: linear-gradient(to right, var(--cream), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--gold);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Profile Section */
+        .mediaContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 60px;
+            position: relative;
+            flex-wrap: nowrap;
+            margin-bottom: 2rem;
+        }
+
+        .video {
+            width: 43%;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            background-color: black;
+            z-index: 10;
+        }
+
+        .picture img {
+            width: 200px; 
+            height: 200px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            position: relative;
+            z-index: 1;
+            border: 4px solid #2c3e50; 
+        }
+
+        /* Modern Navigation Grid */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .nav-card {
+            background: rgba(79, 112, 156, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(221, 168, 83, 0.1), transparent);
+            z-index: -1;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            background: rgba(79, 112, 156, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .nav-card a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-card p {
+            color: rgba(245, 239, 231, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Modern Footer */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 1.5rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Floating Particles Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            header {
+                padding: 2rem 1.5rem;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <header>
+            <h1>Welcome to My Life</h1>
+            <p class="tagline">A digital journey through my experiences, passions, and aspirations</p>
+        </header>
+
+        <div class="mediaContainer">
+            <div class="picture">
+                <img src="me.jpg" alt="Webpage Picture">
+            </div>
+            <video class="video" controls muted>
+                <source src="welcvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="nav-grid">
+            <!-- Biography -->
+            <div class="nav-card">
+                <i class="fas fa-user"></i>
+                <a href="bio.html">Biography</a>
+                <p>My life story through different chapters</p>
+            </div>
+
+            <!-- Skills -->
+            <div class="nav-card">
+                <i class="fas fa-lightbulb"></i>
+                <a href="skills.html">Skills</a>
+                <p>Discover my abilities and talents</p>
+            </div>
+
+            <!-- Resume -->
+            <div class="nav-card">
+                <i class="fas fa-file-alt"></i>
+                <a href="resume.html">Resume</a>
+                <p>Professional background and achievements</p>
+            </div>
+
+            <!-- Gallery -->
+            <div class="nav-card">
+                <i class="fas fa-images"></i>
+                <a href="photogal.html">Photo Gallery</a>
+                <p>Visual moments from my journey</p>
+            </div>
+
+            <!-- Beats -->
+            <div class="nav-card">
+                <i class="fas fa-music"></i>
+                <a href="mybeats.html">My Beats</a>
+                <p>Curated collection of my favorite music</p>
+            </div>
+
+            <!-- Film -->
+            <div class="nav-card">
+                <i class="fas fa-film"></i>
+                <a href="myfilm.html">My Film</a>
+                <p>Cinematic favorites and influences</p>
+            </div>
+
+            <!-- TV Shows -->
+            <div class="nav-card">
+                <i class="fas fa-tv"></i>
+                <a href="tvshows.html">TV Shows</a>
+                <p>Series that captivate my imagination</p>
+            </div>
+
+            <!-- Bucket List -->
+            <div class="nav-card">
+                <i class="fas fa-list-check"></i>
+                <a href="bucket.html">Bucket List</a>
+                <p>Dreams and experiences I aspire to</p>
+            </div>
+
+            <!-- Travel -->
+            <div class="nav-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <a href="places.html">Dream Places</a>
+                <p>Destinations I wish to explore</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

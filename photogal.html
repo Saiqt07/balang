@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery by Category</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for the gallery */
+        .gallery-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .category-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-title {
+            color: #27548A;
+            border-bottom: 2px solid #DDA853;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        
+        .thumbnail-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            aspect-ratio: 1/1;
+            background-color: #f0f0f0;
+        }
+        
+        .thumbnail-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .thumbnail-container:hover .thumbnail-img {
+            transform: scale(1.05);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .thumbnail-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .thumbnail-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .thumbnail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thumbnail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Photo Gallery</h1>
+            <p class="tagline">Captured moments organized by category</p>
+        </header>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <a href="#me-dump">Me Dump</a>
+            <a href="#random-pics">Random Pics</a>
+            <a href="#food-dump">Food Dump</a>
+            <a href="#billiards-dump">Billiards Dump</a>
+        </nav>
+
+        <!-- Gallery Sections -->
+        <section id="me-dump" class="gallery-section">
+            <h2 class="category-title">Me Dump</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="thumbnail-grid">
+                        <a href="me (1).jpg" class="thumbnail-container" target="output">
+                            <img src="me (1).jpg" alt="Me" class="thumbnail-img">
+                        </a>
+                        <a href="me (2).jpg" class="thumbnail-container" target="output">
+                            <img src="me (2).jpg" alt="Me" class="thumbnail-img">
+                        </a>
+                        <a href="me (3).jpg" class="thumbnail-container" target="output">
+                            <img src="me (3).jpg" alt="Me" class="thumbnail-img">
+                        </a>
+                        <a href="me (4).jpg" class="thumbnail-container" target="output">
+                            <img src="me (4).jpg" alt="Me" class="thumbnail-img">
+                        </a>
+                        <a href="me (5).jpg" class="thumbnail-container" target="output">
+                            <img src="me (5).jpg" alt="Me" class="thumbnail-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="back-to-top">
+                <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </section>
+
+        <section id="random-pics" class="gallery-section">
+            <h2 class="category-title">Random Pics</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="thumbnail-grid">
+                        <a href="random (1).jpg" class="thumbnail-container" target="output">
+                            <img src="random (1).jpg" alt="Random" class="thumbnail-img">
+                        </a>
+                        <a href="random (2).jpg" class="thumbnail-container" target="output">
+                            <img src="random (2).jpg" alt="Random" class="thumbnail-img">
+                        </a>
+                        <a href="random (3).jpg" class="thumbnail-container" target="output">
+                            <img src="random (3).jpg" alt="Random" class="thumbnail-img">
+                        </a>
+                        <a href="random (4).jpg" class="thumbnail-container" target="output">
+                            <img src="random (4).jpg" alt="Random" class="thumbnail-img">
+                        </a>
+                        <a href="random.jpg" class="thumbnail-container" target="output">
+                            <img src="random.jpg" alt="Random" class="thumbnail-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="back-to-top">
+                <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </section>
+
+        <section id="food-dump" class="gallery-section">
+            <h2 class="category-title">Food Dump</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="thumbnail-grid">
+                        <a href="food.jpg" class="thumbnail-container" target="output">
+                            <img src="food.jpg" alt="Food" class="thumbnail-img">
+                        </a>
+                        <a href="food (1).jpg" class="thumbnail-container" target="output">
+                            <img src="food (1).jpg" alt="Food" class="thumbnail-img">
+                        </a>
+                        <a href="food (2).jpg" class="thumbnail-container" target="output">
+                            <img src="food (2).jpg" alt="Food" class="thumbnail-img">
+                        </a>
+                        <a href="food (3).jpg" class="thumbnail-container" target="output">
+                            <img src="food (3).jpg" alt="Food" class="thumbnail-img">
+                        </a>
+                        <a href="food (4).jpg" class="thumbnail-container" target="output">
+                            <img src="food (4).jpg" alt="Food" class="thumbnail-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="back-to-top">
+                <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </section>
+
+        <section id="billiards-dump" class="gallery-section">
+            <h2 class="category-title">Billiards Dump</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="thumbnail-grid">
+                        <a href="bil (1).jpg" class="thumbnail-container" target="output">
+                            <img src="bil (1).jpg" alt="Billiards" class="thumbnail-img">
+                        </a>
+                        <a href="bil (2).jpg" class="thumbnail-container" target="output">
+                            <img src="bil (2).jpg" alt="Billiards" class="thumbnail-img">
+                        </a>
+                        <a href="bil (3).jpg" class="thumbnail-container" target="output">
+                            <img src="bil (3).jpg" alt="Billiards" class="thumbnail-img">
+                        </a>
+                        <a href="bil (4).jpg" class="thumbnail-container" target="output">
+                            <img src="bil (4).jpg" alt="Billiards" class="thumbnail-img">
+                        </a>
+                        <a href="bil (5).jpg" class="thumbnail-container" target="output">
+                            <img src="bil (5).jpg" alt="Billiards" class="thumbnail-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="back-to-top">
+                <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

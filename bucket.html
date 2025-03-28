@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Bucket List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Improved Bucket List Styles - Enhanced Readability */
+        .bucket-section {
+            margin-bottom: 3rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+    
+        .bucket-category {
+            color: #DDA853;
+            font-size: 1.7rem;
+            margin: 0 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4F709C;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+    
+        .bucket-category i {
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+    
+        .bucket-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    
+        .bucket-item {
+            background: rgba(79, 112, 156, 0.12);
+            backdrop-filter: blur(6px);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid rgba(221, 168, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+    
+        .bucket-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left-color: #DDA853;
+        }
+    
+        .bucket-item.completed {
+            background: rgba(221, 168, 83, 0.1);
+            border-left: 4px solid #DDA853;
+        }
+    
+        .bucket-item.completed .item-title::before {
+            content: "✓ ";
+            color: #DDA853;
+            font-weight: bold;
+        }
+    
+        .item-title {
+            font-size: 1.2rem;
+            color: #2A3F5F;
+            margin: 0 0 0.8rem 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+    
+        .item-desc {
+            color: #4F709C;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+    
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #27548A;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed rgba(79, 112, 156, 0.3);
+        }
+    
+        .priority {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            background-color: rgba(221, 168, 83, 0.15);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    
+        .high { 
+            color: #E74C3C;
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+        .medium { 
+            color: #F39C12;
+            background-color: rgba(243, 156, 18, 0.1);
+        }
+        .low { 
+            color: #27AE60;
+            background-color: rgba(39, 174, 96, 0.1);
+        }
+    
+        @media (max-width: 768px) {
+            .bucket-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .bucket-section {
+                padding: 1.5rem;
+            }
+            
+            .bucket-category {
+                font-size: 1.5rem;
+            }
+            
+            .item-title {
+                font-size: 1.15rem;
+            }
+        }
+        .progress-container {
+        background: rgba(33, 53, 85, 0.8);
+        border-radius: 10px;
+        padding: 2.5rem;
+        margin-bottom: 3.5rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-title {
+            color: #F5EFE7;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: rgba(79, 112, 156, 0.3);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #DDA853, #feca57);
+            border-radius: 10px;
+            width: 25%;
+            transition: width 1s ease;
+        }
+
+        .progress-text {
+            color: #DDA853;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>My Bucket List</h1>
+            <p class="tagline">Dreams, goals, and experiences I want to accomplish in my lifetime</p>
+        </header>
+
+        <!-- Progress Overview -->
+        <section class="progress-container">
+            <h3 class="progress-title">My Bucket List Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+            <div class="progress-text">25% Completed - 12 of 48 items</div>
+        </section>
+
+        <!-- Travel Goals -->
+        <section class="bucket-section">
+            <h2 class="bucket-category"><i class="fas fa-plane"></i> Travel Adventures</h2>
+            <div class="bucket-list">
+                <div class="bucket-item completed">
+                    <h3 class="item-title">Visit Japan during cherry blossom season</h3>
+                    <p class="item-desc">Experience the beauty of sakura in Kyoto and Tokyo, try authentic sushi, and ride the bullet train.</p>
+                    <div class="item-meta">
+                        <span>Completed: 2022</span>
+                        <span class="priority high">High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item">
+                    <h3 class="item-title">Road trip across the American West</h3>
+                    <p class="item-desc">Drive Route 66, see the Grand Canyon, and visit iconic national parks like Yosemite and Zion.</p>
+                    <div class="item-meta">
+                        <span>Target: 2025</span>
+                        <span class="priority medium">Medium Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item">
+                    <h3 class="item-title">Swim in the Maldives</h3>
+                    <p class="item-desc">Stay in an overwater bungalow and snorkel in the crystal-clear waters with tropical fish.</p>
+                    <div class="item-meta">
+                        <span>Target: 2027</span>
+                        <span class="priority low">Low Priority</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career & Education -->
+        <section class="bucket-section">
+            <h2 class="bucket-category"><i class="fas fa-graduation-cap"></i> Career & Education</h2>
+            <div class="bucket-list">
+                <div class="bucket-item completed">
+                    <h3 class="item-title">Graduate from University</h3>
+                    <p class="item-desc">Earn my bachelor's degree in Computer Science with honors.</p>
+                    <div class="item-meta">
+                        <span>Completed: 2023</span>
+                        <span class="priority high">High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item">
+                    <h3 class="item-title">Start my own tech company</h3>
+                    <p class="item-desc">Develop an innovative app that solves real-world problems and build a successful business around it.</p>
+                    <div class="item-meta">
+                        <span>Target: 2026</span>
+                        <span class="priority high">High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item">
+                    <h3 class="item-title">Speak at a major tech conference</h3>
+                    <p class="item-desc">Share my knowledge and experience with other professionals in the industry.</p>
+                    <div class="item-meta">
+                        <span>Target: 2028</span>
+                        <span class="priority medium">Medium Priority</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Growth -->
+        <section class="bucket-section">
+            <h2 class="bucket-category"><i class="fas fa-heart"></i> Personal Growth</h2>
+            <div class="bucket-list">
+                <div class="bucket-item">
+                    <h3 class="item-title">Learn to play the guitar</h3>
+                    <p class="item-desc">Master 10 of my favorite songs and perform at a small open mic night.</p>
+                    <div class="item-meta">
+                        <span>Target: 2024</span>
+                        <span class="priority medium">Medium Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item completed">
+                    <h3 class="item-title">Run a half marathon</h3>
+                    <p class="item-desc">Train consistently and complete a 21K race with a respectable time.</p>
+                    <div class="item-meta">
+                        <span>Completed: 2021</span>
+                        <span class="priority high">High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item">
+                    <h3 class="item-title">Write a personal memoir</h3>
+                    <p class="item-desc">Document my life experiences and lessons learned to share with future generations.</p>
+                    <div class="item-meta">
+                        <span>Target: 2030</span>
+                        <span class="priority low">Low Priority</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure & Experiences -->
+        <section class="bucket-section">
+            <h2 class="bucket-category"><i class="fas fa-mountain"></i> Adventure & Experiences</h2>
+            <div class="bucket-list">
+                <div class="bucket-item">
+                    <h3 class="item-title">Go skydiving</h3>
+                    <p class="item-desc">Experience the ultimate adrenaline rush with a tandem jump from 15,000 feet.</p>
+                    <div class="item-meta">
+                        <span>Target: 2024</span>
+                        <span class="priority high">High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item">
+                    <h3 class="item-title">Attend the Olympics</h3>
+                    <p class="item-desc">Witness world-class athletes compete in person at this global sporting event.</p>
+                    <div class="item-meta">
+                        <span>Target: 2028</span>
+                        <span class="priority medium">Medium Priority</span>
+                    </div>
+                </div>
+                
+                <div class="bucket-item completed">
+                    <h3 class="item-title">Swim with dolphins</h3>
+                    <p class="item-desc">Interact with these intelligent creatures in their natural habitat.</p>
+                    <div class="item-meta">
+                        <span>Completed: 2019</span>
+                        <span class="priority medium">Medium Priority</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="back-to-top"><a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a></p>
+    </div>
+</body>
+</html>

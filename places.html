@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Travel Destinations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="home">
+            <h1>Dream Travel Destinations</h1>
+            <p class="tagline">Explore the world's most breathtaking places</p>
+        </header>
+        <section id="destinations">
+            <h2>Explore My Top Destinations</h2>
+            <div class="map-section">
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <img src="map1.jpg" alt="World Map with Dream Destinations" id="map-image" usemap="#image-map">
+                        <map name="image-map">
+                            <area target="output" alt="Korea" title="Korea" href="korea.html" coords="1188,47,1523,336" shape="rect">
+                            <area target="output" alt="Greece" title="Greece" href="greece.html" coords="1132,586,242" shape="circle">
+                            <area target="output" alt="Norway" title="Norway" href="norway.html" coords="714,836,220" shape="circle">
+                            <area target="output" alt="Brazil" title="Brazil" href="brazil.html" coords="1390,940,158" shape="circle">
+                            <area target="output" alt="Japan" title="Japan" href="japan.html" coords="479,27,1001,29,1021,114,1003,239,972,316,909,398,866,446,775,493,680,524,577,524,470,499" shape="poly">
+                        </map>
+                    </div>
+                    <div class="destination-list">
+                        <h3>Featured Destinations</h3>
+                        <ul>
+                            <li><a href="korea.html"><i class="fas fa-chevron-right"></i> Korea</a></li>
+                            <li><a href="greece.html"><i class="fas fa-chevron-right"></i> Greece</a></li>
+                            <li><a href="norway.html"><i class="fas fa-chevron-right"></i> Norway</a></li>
+                            <li><a href="brazil.html"><i class="fas fa-chevron-right"></i> Brazil</a></li>
+                            <li><a href="japan.html"><i class="fas fa-chevron-right"></i> Japan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-visit" class="why-visit">
+            <h2>Why Visit These Places?</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Unique Cultures</h3>
+                    <p>Experience diverse traditions, cuisines, and ways of life that will broaden your perspective.</p>
+                </div>
+                <div class="reason-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Stunning Landscapes</h3>
+                    <p>From majestic mountains to pristine beaches, these destinations offer breathtaking natural beauty.</p>
+                </div>
+                <div class="reason-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Delicious Cuisine</h3>
+                    <p>Taste authentic flavors and dishes you won't find anywhere else in the world.</p>
+                </div>
+                <div class="reason-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Rich History</h3>
+                    <p>Walk through ancient sites and learn about civilizations that shaped our world.</p>
+                </div>
+            </div>
+            <div class="back-to-top">
+                <a href="#home"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const image = document.getElementById('map-image');
+            const map = document.querySelector('map[name="image-map"]');
+            const areas = map.getElementsByTagName('area');
+        
+            function resizeMap() {
+                if (!image.naturalWidth) return;
+                
+                const originalWidth = image.naturalWidth;
+                const originalHeight = image.naturalHeight;
+                const currentWidth = image.clientWidth;
+                const currentHeight = image.clientHeight;
+        
+                const widthScale = currentWidth / originalWidth;
+                const heightScale = currentHeight / originalHeight;
+        
+                for (let i = 0; i < areas.length; i++) {
+                    const area = areas[i];
+                    const originalCoords = area.getAttribute('data-original-coords') || area.getAttribute('coords');
+                    area.setAttribute('data-original-coords', originalCoords);
+        
+                    const coords = originalCoords.split(',').map(coord => parseFloat(coord));
+                    const newCoords = coords.map((coord, index) => 
+                        index % 2 === 0 ? Math.round(coord * widthScale) : Math.round(coord * heightScale)
+                    );
+        
+                    area.setAttribute('coords', newCoords.join(','));
+                }
+            }
+        
+            if (image.complete) {
+                resizeMap();
+            } else {
+                image.addEventListener('load', resizeMap);
+            }
+        
+            window.addEventListener('resize', resizeMap);
+        
+            // Add hover effect for map areas
+            const allAreas = document.querySelectorAll('area');
+            allAreas.forEach(area => {
+                area.addEventListener('mouseenter', function() {
+                    this.style.cursor = 'pointer';
+                    const title = this.getAttribute('title');
+                    if (title) {
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'map-tooltip';
+                        tooltip.textContent = title;
+                        document.body.appendChild(tooltip);
+                        
+                        this.addEventListener('mousemove', function(e) {
+                            tooltip.style.left = (e.pageX + 15) + 'px';
+                            tooltip.style.top = (e.pageY + 15) + 'px';
+                        });
+                        
+                        this.addEventListener('mouseleave', function() {
+                            document.body.removeChild(tooltip);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

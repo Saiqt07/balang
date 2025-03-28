@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greece - Dream Travel Destinations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional CSS specific to Greece page */
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #DDA853;
+        }
+        
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-section img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-section img:hover {
+            transform: scale(1.03);
+        }
+        
+        .content-text {
+            padding: 20px;
+        }
+        
+        .transport-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .transport-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transport-card i {
+            font-size: 2rem;
+            color: #27548A;
+            margin-bottom: 15px;
+        }
+        
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .place-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .place-info {
+            padding: 20px;
+        }
+        
+        .place-info h3 {
+            color: #27548A;
+            margin-top: 0;
+        }
+        
+        .island-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .island-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .island-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-card {
+                min-width: 100%;
+            }
+            
+            .island-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Discover Greece</h1>
+            <p class="tagline">Where ancient history meets azure seas</p>
+        </header>
+
+        <section>
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Santorini sunset" class="hero-image">
+            
+            <h2>Why Greece is Special to Me</h2>
+            <div class="content-section">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1519683109079-d5f539e1542f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Acropolis of Athens">
+                    <img src="https://media.istockphoto.com/id/1342489242/photo/mykonos-greece-narrow-streets-and-traditional-architecture.jpg?s=612x612&w=0&k=20&c=tcPz0AbqmZnXDn4YZB2_SevC9FQO9r8ZOn77vZ8YC1c=" alt="Mykonos streets">
+                </div>
+                <div class="content-text">
+                    <p>Greece stole my heart from the moment I first set foot on its sun-drenched islands. There's something magical about the way golden sunlight dances on whitewashed buildings, the scent of oregano and lemon in the air, and the warm embrace of Greek hospitality that makes this country unforgettable.</p>
+                    <p>What makes Greece truly special is its perfect blend of ancient wonders and natural beauty. Standing before the Parthenon at sunset, I felt connected to thousands of years of history, while swimming in the crystal-clear waters of the Aegean reminded me of nature's timeless perfection. The Greek concept of "philoxenia" (friendliness to strangers) is something I experienced daily, from shared meals with locals to impromptu dancing in village squares.</p>
+                    <p>Some of my most cherished memories include watching the sunset over Santorini's caldera, exploring the medieval streets of Rhodes Old Town, and discovering hidden beaches in Milos. Greece taught me to slow down, savor each moment, and find joy in simple pleasures - lessons that stay with me long after my travels.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>How to Get to Greece</h2>
+            <p>Greece is easily accessible with various transportation options:</p>
+            
+            <div class="transport-options">
+                <div class="transport-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>By Air</h3>
+                    <p>Athens International Airport (ATH) is the main hub, with direct flights worldwide. Many islands also have airports with seasonal international flights.</p>
+                </div>
+                <div class="transport-card">
+                    <i class="fas fa-ship"></i>
+                    <h3>By Sea</h3>
+                    <p>Ferries connect Greece to Italy, Turkey, and Albania. The extensive domestic ferry network is perfect for island hopping.</p>
+                </div>
+                <div class="transport-card">
+                    <i class="fas fa-car"></i>
+                    <h3>By Land</h3>
+                    <p>Road connections from Albania, North Macedonia, Bulgaria, and Turkey. The Egnatia Odos highway crosses northern Greece.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Must-Visit Greek Islands</h2>
+            <p>With over 200 inhabited islands, here are some of the most beautiful:</p>
+            
+            <div class="island-gallery">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Santorini">
+                <img src="https://media.istockphoto.com/id/1342489242/photo/mykonos-greece-narrow-streets-and-traditional-architecture.jpg?s=612x612&w=0&k=20&c=tcPz0AbqmZnXDn4YZB2_SevC9FQO9r8ZOn77vZ8YC1c=" alt="Mykonos">
+                <img src="https://images.unsplash.com/photo-1519683109079-d5f539e1542f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Crete">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rhodes">          
+        </section>
+
+        <section>
+            <h2>Other Amazing Places to Visit in Greece</h2>
+            <p>Beyond the famous islands, Greece offers incredible mainland destinations:</p>
+            
+            <div class="places-grid">
+                <div class="place-card">
+                    <img src="https://images.unsplash.com/photo-1519683109079-d5f539e1542f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Athens">
+                    <div class="place-info">
+                        <h3>Athens</h3>
+                        <p>The historic capital where ancient wonders like the Acropolis blend with vibrant modern neighborhoods.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="https://images.unsplash.com/photo-1580502304784-8985b7eb7260?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Thessaloniki">
+                    <div class="place-info">
+                        <h3>Thessaloniki</h3>
+                        <p>Greece's cultural capital with Byzantine walls, Ottoman monuments, and a thriving food scene.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="https://www.greeknewsagenda.gr/wp-content/uploads/sites/2/2022/11/Delphi1.jpg" alt="Delphi">
+                    <div class="place-info">
+                        <h3>Delphi</h3>
+                        <p>Ancient sanctuary of Apollo with breathtaking mountain views and well-preserved ruins.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="https://img.travelnaut.com/web/db/photose/location/eu/gr/meteora/c8381d873a15109ed3f5c0aa324d5b64.jpeg?format=webp&width=3840&quality=75" alt="Meteora">
+                    <div class="place-info">
+                        <h3>Meteora</h3>
+                        <p>Spectacular monasteries perched atop towering rock formations in central Greece.</p>
+                    </div>
+                </div>
+        </section>
+        <div class="back-to-top">
+            <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+        </div>
+    </div>
+</body>
+</html>

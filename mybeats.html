@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Beats</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Improved styles for My Beats page */
+        :root {
+            --primary: #27548A;
+            --secondary: #DDA853;
+            --light: #F5EFE7;
+            --dark: #183B4E;
+            --white: #FFFFFF;
+        }
+        
+        
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--dark);
+            font-style: italic;
+        }
+        
+        .genre-section {
+            background-color: rgba(79, 112, 156, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .song-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .song-card {
+            display: flex;
+            background-color: rgba(79, 112, 156, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .album-art {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .song-content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .song-meta {
+            margin-bottom: 10px;
+        }
+        
+        .song-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .artist {
+            color: var(--dark);
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+        
+        .album {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        .genre-title {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .audio-container {
+            margin-top: 10px;
+        }
+        
+        audio {
+            width: 100%;
+            height: 40px;
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background-color: var(--light);
+            border-radius: 0;
+        }
+        
+        audio::-webkit-media-controls-play-button {
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: var(--dark);
+            font-size: 0.8rem;
+        }
+        
+        .back-to-top {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-to-top a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .song-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .song-card {
+                flex-direction: column;
+            }
+            
+            .album-art {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1/1;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>My Beats</h1>
+            <p class="tagline">A collection of my favorite tunes across genres</p>
+        </header>
+
+        <!-- Soft Rock Section -->
+        <section class="genre-section" id="soft-rock">
+            <h2 class="genre-title"><i class="fas fa-guitar"></i> Soft Rock</h2>
+            <div class="song-list">
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b27321cf854fa7ea1dc20fff2621" alt="Til They Take Me Away album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Til They Take Me Away</div>
+                            <div class="artist">Clair Mario</div>
+                            <div class="album">Single (2021)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="soft rock (1).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2731dbc4b532d15e4fb6be7e1ef" alt="Always album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Always</div>
+                            <div class="artist">Atlantic Starr</div>
+                            <div class="album">All in the Name of Love (1987)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="soft rock (2).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2732829c65a6a5dd1d13f818f3a" alt="My Day album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">My Day</div>
+                            <div class="artist">Hellmerry</div>
+                            <div class="album">Single (2020)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="soft rock (3).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hip-Hop Section -->
+        <section class="genre-section" id="hiphop">
+            <h2 class="genre-title"><i class="fas fa-microphone-alt"></i> Hip-Hop</h2>
+            <div class="song-list">
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2732829c65a6a5dd1d13f818f3a" alt="My Day album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">My Day</div>
+                            <div class="artist">Hellmerry</div>
+                            <div class="album">Single (2020)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="soft rock (3).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2731e1428a3aed0f941c1ceb5f5" alt="Minahalagad album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Minahalagad</div>
+                            <div class="artist">BRC, Hev Abi</div>
+                            <div class="album">Single (2021)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="hip hop (1).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b27390cd45edfe90d863afa3f12b" alt="Pwede Bang album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Pwede Bang</div>
+                            <div class="artist">Hev Abi</div>
+                            <div class="album">Single (2021)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="hip hop (2).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- R&B/Soul Section -->
+        <section class="genre-section" id="rnb-soul">
+            <h2 class="genre-title"><i class="fas fa-music"></i> R&B/Soul</h2>
+            <div class="song-list">
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2737c68face1dc58127f3a7b1cc" alt="Always album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Always</div>
+                            <div class="artist">Daniel Caesar</div>
+                            <div class="album">All in the Name of Love (1987)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="RNB (1).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b273617c314e94693fad9a26f798" alt="Japanese Denim album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Japanese Denim</div>
+                            <div class="artist">Daniel Caesar</div>
+                            <div class="album">Get You - Single (2016)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="RNB (2).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-card">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2733138f891f3075c9c5d944037" alt="Get You album art" class="album-art">
+                    <div class="song-content">
+                        <div class="song-meta">
+                            <div class="song-title">Get You (feat. Kali Uchis)</div>
+                            <div class="artist">Daniel Caesar, Kali Uchis</div>
+                            <div class="album">Freudian (2017)</div>
+                        </div>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="RNB (3).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="back-to-top">
+            <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+        </div>
+    </div>
+</body>
+</html>

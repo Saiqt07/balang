@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Favorite Films</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional Film-specific Styles */
+        .film-section {
+            background-color: rgba(79, 112, 156, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(221, 168, 83, 0.2);
+        }
+
+        .film-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .film-poster {
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .film-poster:hover {
+            transform: scale(1.05);
+        }
+
+        .film-title {
+            color: #DDA853;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .film-meta {
+            color: rgb(39, 84, 138);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .film-meta span {
+            color: #27548A;
+            font-weight: 600;
+        }
+
+        .film-synopsis {
+            margin: 1.5rem 0;
+            line-height: 1.7;
+        }
+
+        .film-trailer {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .film-trailer iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .genre-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: #DDA853;
+            color: #213555;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .film-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .film-poster {
+                margin: 0 auto;
+            }
+            
+            .film-title {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            
+            .film-meta {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>My Favorite Films</h1>
+            <p class="tagline">A collection of movies that inspire and entertain me</p>
+        </header>
+
+        <!-- Transformers: Age of Extinction -->
+        <section class="film-section" id="transformers">
+            <div class="film-header">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjEwNTg1MTA5Nl5BMl5BanBnXkFtZTgwOTg2OTM4MTE@._V1_.jpg" 
+                     alt="Transformers: Age of Extinction Poster" class="film-poster">
+                <div>
+                    <h2 class="film-title">Transformers: Age of Extinction</h2>
+                    <div class="film-meta">
+                        <div><span>Director:</span> Michael Bay</div>
+                        <div><span>Stars:</span> Mark Wahlberg, Nicola Peltz, Jack Reynor</div>
+                        <div><span>Year:</span> 2014</div>
+                        <div><span>Runtime:</span> 165 min</div>
+                    </div>
+                    <div>
+                        <span class="genre-tag">Action</span>
+                        <span class="genre-tag">Sci-Fi</span>
+                        <span class="genre-tag">Adventure</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="film-synopsis">
+                After an epic battle that left Chicago in ruins, humanity picks up the pieces and moves on. But a group of powerful, ingenious businessmen and scientists attempt to learn from past Transformer incursions and push the boundaries of technology beyond what they can control. When a mechanic and his daughter make a discovery that brings down the Autobots and Decepticons once more, they find themselves in the middle of a war that threatens the entire planet.
+            </p>
+            
+            <div class="film-trailer">
+                <iframe src="https://www.youtube.com/embed/dYDGqmxMZFI" 
+                        title="Transformers: Age of Extinction Official Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Avengers: Endgame -->
+        <section class="film-section" id="avengers">
+            <div class="film-header">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg" 
+                     alt="Avengers: Endgame Poster" class="film-poster">
+                <div>
+                    <h2 class="film-title">Avengers: Endgame</h2>
+                    <div class="film-meta">
+                        <div><span>Directors:</span> Anthony Russo, Joe Russo</div>
+                        <div><span>Stars:</span> Robert Downey Jr., Chris Evans, Mark Ruffalo</div>
+                        <div><span>Year:</span> 2019</div>
+                        <div><span>Runtime:</span> 181 min</div>
+                    </div>
+                    <div>
+                        <span class="genre-tag">Action</span>
+                        <span class="genre-tag">Sci-Fi</span>
+                        <span class="genre-tag">Adventure</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="film-synopsis">
+                After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe. The epic conclusion to 22 films brings the ultimate battle against Thanos, testing the Avengers like never before as they fight to save the universe and honor their fallen comrades.
+            </p>
+            
+            <div class="film-trailer">
+                <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c" 
+                        title="Avengers: Endgame Official Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- The Amazing Spider-Man 2 -->
+        <section class="film-section" id="spiderman">
+            <div class="film-header">
+                <img src="https://m.media-amazon.com/images/M/MV5BOTA5NDYxNTg0OV5BMl5BanBnXkFtZTgwODE5NzU1MTE@._V1_.jpg" 
+                     alt="The Amazing Spider-Man 2 Poster" class="film-poster">
+                <div>
+                    <h2 class="film-title">The Amazing Spider-Man 2</h2>
+                    <div class="film-meta">
+                        <div><span>Director:</span> Marc Webb</div>
+                        <div><span>Stars:</span> Andrew Garfield, Emma Stone, Jamie Foxx</div>
+                        <div><span>Year:</span> 2014</div>
+                        <div><span>Runtime:</span> 142 min</div>
+                    </div>
+                    <div>
+                        <span class="genre-tag">Action</span>
+                        <span class="genre-tag">Adventure</span>
+                        <span class="genre-tag">Sci-Fi</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="film-synopsis">
+                Peter Parker runs the gauntlet as the mysterious company Oscorp sends up a slew of supervillains against him, impacting on his life. As Spider-Man, Peter faces his greatest challenge yet in protecting New York City from these threats while dealing with personal struggles in his relationship with Gwen Stacy and uncovering new clues about his parents' disappearance.
+            </p>
+            
+            <div class="film-trailer">
+                <iframe src="https://www.youtube.com/embed/nbp3Ra3Yp74" 
+                        title="The Amazing Spider-Man 2 Official Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <p class="back-to-top"><a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Korea - Dream Travel Destinations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional CSS specific to South Korea page */
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #DDA853;
+        }
+        
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-section img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-section img:hover {
+            transform: scale(1.03);
+        }
+        
+        .content-text {
+            padding: 20px;
+        }
+        
+        .transport-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .transport-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transport-card i {
+            font-size: 2rem;
+            color: #27548A;
+            margin-bottom: 15px;
+        }
+        
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .place-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .place-info {
+            padding: 20px;
+        }
+        
+        .place-info h3 {
+            color: #27548A;
+            margin-top: 0;
+        }
+        
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .food-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .food-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-card {
+                min-width: 100%;
+            }
+            
+            .food-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="bio.html"><i class="fa-solid fa-user"></i> Biography</a></li>
+                <li><a href="skills.html"><i class="fa-solid fa-lightbulb"></i> Skills</a></li>
+                <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+                <li><a href="photogal.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="mybeats.html"><i class="fa-brands fa-spotify"></i> My Beats</a></li>
+                <li><a href="myfilm.html"><i class="fa-solid fa-film"></i> My Film</a></li>
+                <li><a href="tvshows.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+                <li><a href="bucket.html"><i class="fas fa-list"></i> Bucket List</a></li>
+                <li><a href="places.html"><i class="fas fa-map-marked-alt"></i> Dream Places</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Discover South Korea</h1>
+            <p class="tagline">Where tradition meets innovation in perfect harmony</p>
+        </header>
+
+        <section>
+            <img src="https://afar.brightspotcdn.com/dims4/default/aee4165/2147483647/strip/true/crop/1600x800+0+0/resize/1440x720!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F02%2Fbf%2Fa6b427fc47bb0fe4e702e1b859f1%2Foriginal-e30a5e10058c7167cd5e9cdcd65cc706.jpg" alt="Seoul cityscape with Gyeongbokgung Palace" class="hero-image">
+            
+            <h2>Why South Korea is Special to Me</h2>
+            <div class="content-section">
+                <div>
+                    <img src="https://korean.visitseoul.net/data/kukudocs/seoul2133/20220518/202205181617250471.jpg" alt="Traditional hanok village">
+                    <img src="https://static.wixstatic.com/media/0505b9_3bca7b2a64134e479c58cb4cc7e786aa~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jeoryeong%20Coastal%20Walk-2%20landscape%20G27.jpg" alt="Busan coastline">
+                </div>
+                <div class="content-text">
+                    <p>South Korea captivated me from the moment I first arrived in Seoul. The dynamic energy of the city, where ancient palaces stand shoulder-to-shoulder with futuristic skyscrapers, creates a fascinating contrast that tells the story of a nation that honors its past while racing toward the future.</p>
+                    <p>What makes Korea truly special is the warmth of its people. I'll never forget the kindness of strangers who helped me navigate subway stations, or the ajummas (older women) who insisted I try their homemade kimchi at local markets. The Korean concept of "jeong" - that deep emotional connection between people - is something I felt everywhere I went.</p>
+                    <p>From participating in a traditional tea ceremony in a hanok (traditional house) to dancing the night away in Hongdae's clubs, from hiking the beautiful trails of Seoraksan to soaking in a jjimjilbang (Korean spa), every experience felt uniquely Korean. The country's dedication to preserving its cultural heritage while embracing innovation is something I deeply admire.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>How to Get to South Korea</h2>
+            <p>South Korea is easily accessible with excellent transportation infrastructure:</p>
+            
+            <div class="transport-options">
+                <div class="transport-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>By Air</h3>
+                    <p>Incheon International Airport (near Seoul) is consistently ranked among the world's best airports. Direct flights available from most continents. Other international airports include Gimpo (Seoul), Gimhae (Busan), and Jeju.</p>
+                </div>
+                <div class="transport-card">
+                    <i class="fas fa-ship"></i>
+                    <h3>By Sea</h3>
+                    <p>Ferries connect Korea to China, Japan, and Russia. The most popular routes are between Busan and Japanese cities like Fukuoka and Osaka.</p>
+                </div>
+                <div class="transport-card">
+                    <i class="fas fa-train"></i>
+                    <h3>By Land</h3>
+                    <p>From North Korea via the DMZ (for special tours only). Korea also has an excellent KTX high-speed rail system connecting major cities once you arrive.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Must-Try Korean Foods</h2>
+            <p>Korean cuisine is a highlight of any visit. Don't miss these delicious dishes:</p>
+            
+            <div class="food-gallery">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY7PpVTDmc-Wm41NgUzNA7dz8hshBAjZxXyA&s" alt="Kimchi">
+                <img src="https://www.recipetineats.com/tachyon/2019/05/Bibimbap_3.jpg" alt="Bibimbap">
+                <img src="https://i.ytimg.com/vi/_zqmjkXrYbM/maxresdefault.jpg" alt="Korean BBQ">
+                <img src="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_1500,ar_3:2/k%2FPhoto%2FRecipes%2F2024-09-tteokbokki%2Ftteokbokki-523" alt="Tteokbokki">
+            </div>
+            
+            <div class="back-to-top">
+                <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Other Amazing Places to Visit in South Korea</h2>
+            <p>Beyond Seoul, Korea offers diverse regions to explore:</p>
+            
+            <div class="places-grid">
+                <div class="place-card">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/01-gettyimages-1746790723v2.jpg?c=original" alt="Busan">
+                    <div class="place-info">
+                        <h3>Busan</h3>
+                        <p>Korea's vibrant second city with beautiful beaches, the famous Jagalchi fish market, and the colorful Gamcheon Culture Village.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="https://images.musement.com/cover/0158/73/gyeongju-adobestock-321579379-jpeg_header-15772186.jpg" alt="Jeju Island">
+                    <div class="place-info">
+                        <h3>Jeju Island</h3>
+                        <p>Volcanic island with stunning natural wonders like Hallasan Mountain, lava tubes, and breathtaking coastal scenery.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="https://images.musement.com/cover/0158/73/gyeongju-adobestock-321579379-jpeg_header-15772186.jpg" alt="Gyeongju">
+                    <div class="place-info">
+                        <h3>Gyeongju</h3>
+                        <p>Ancient capital of the Silla Kingdom, filled with historical treasures including Bulguksa Temple and the Cheomseongdae observatory.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/070401_Panmunjeom3.jpg/1200px-070401_Panmunjeom3.jpg" alt="DMZ">
+                    <div class="place-info">
+                        <h3>DMZ</h3>
+                        <p>The Korean Demilitarized Zone offers a unique look at the division of Korea, with tours to the Joint Security Area and tunnels.</p>
+                    </div>
+                </div>          
+        </section>
+        <div class="back-to-top">
+            <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+        </div>
+    </div>
+</body>
+</html>
